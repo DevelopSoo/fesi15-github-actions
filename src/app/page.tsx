@@ -1,15 +1,14 @@
-// app/page.tsx
-import { Metadata } from "next";
+// src/app/page.tsx
 
-export const metadata: Metadata = {
-  title: "접근성",
-  description: "접근성 웹사이트",
-};
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
-      <h1>웹사이트 접근성</h1>
+      <h1>메인 페이지</h1>
+      <Link className="text-blue-500 underline" href="/login">
+        로그인
+      </Link>
     </div>
   );
 }
