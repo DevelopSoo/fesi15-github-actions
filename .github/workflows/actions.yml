@@ -2,7 +2,7 @@
 name: Github Actions 연습하기
 # 언제 작업을 실행할거니?
 # github에 push할 때 실행하겠습니다.
-on: push
+on: pull_request
 
 jobs:
   test:
@@ -18,7 +18,7 @@ jobs:
           node-version: "24"
 
       - name: 의존성 라이브러리 설치하기
-        run: npm install
+        run: npm ci
 
       - name: 테스트 실행하기
         run: npm run test
