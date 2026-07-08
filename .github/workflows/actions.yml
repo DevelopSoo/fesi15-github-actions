@@ -11,3 +11,18 @@ jobs:
     steps:
       - name: 첫 번째 작업
         run: echo "첫 번째 작업 실행 중"
+
+      - name: 여러 명령어를 실행하는 방법
+        run: |
+          echo "첫 번째 명령어"
+          echo "두 번째 명령어"
+
+      - name: Github Actions에 있는 변수를 사용해보기
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+
+      - name: Github Actions의 secret 변수 사용해보기
+        run: |
+          echo ${{ secrets.MY_NAME }}
+          echo ${{ secrets.MY_HOBBY }}
