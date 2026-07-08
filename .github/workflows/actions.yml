@@ -10,4 +10,4 @@ jobs:
         run: echo "message=안녕" >> $GITHUB_OUTPUT
 
       - name: output 사용
-        run: echo "저장된 Output 은 ${steps.save-output.outputs.message} 입니다."
+        run: echo "저장된 Output 은 ${{ steps.save-output.outputs.message }} 입니다."
