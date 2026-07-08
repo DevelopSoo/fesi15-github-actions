@@ -4,5 +4,7 @@ import { server } from "@/mocks/server";
 import { http, HttpResponse } from "msw";
 
 describe("msw 모킹 테스트", () => {
-  test("상세 데이터 모킹", async () => {});
+  test("상세 데이터 모킹", async () => {
+    expect(true).toBe(false);
+  });
 });
