@@ -1,16 +1,16 @@
-// src/app/auth/login/page.tsx
+// src/app/auth/signup/page.tsx
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function LoginPage() {
+export default function SignupPage() {
   const router = useRouter();
-
   const [values, setValues] = useState({
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,12 +19,13 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push("/products");
+    alert(`회원가입이 완료됐습니다. ${values.email}님 환영합니다.`);
+    router.push("/auth/login");
   };
+
   return (
     <>
-      <h1>로그인 페이지</h1>
-
+      <h1>회원가입 페이지</h1>
       <form onSubmit={handleSubmit}>
         <input
           name="email"
@@ -40,10 +41,16 @@ export default function LoginPage() {
           value={values.password}
           onChange={handleChange}
         />
-
-        <button type="submit">로그인</button>
+        <input
+          name="confirmPassword"
+          type="password"
+          placeholder="비밀번호 확인"
+          value={values.confirmPassword}
+          onChange={handleChange}
+        />
+        <button type="submit">회원가입</button>
       </form>
-      <Link href="/auth/signup">회원가입 페이지로 이동</Link>
+      <Link href="/auth/login">로그인 페이지로 이동</Link>
     </>
   );
 }
