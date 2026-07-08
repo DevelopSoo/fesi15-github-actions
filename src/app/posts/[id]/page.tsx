@@ -1,34 +1,11 @@
-// app/posts/[id]/page.tsx
-import { Metadata } from "next";
-
-type Props = {
+export default async function PostPage({
+  params,
+}: {
   params: Promise<{ id: string }>;
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+}) {
   const { id } = await params;
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`,
-  );
-  const post = await response.json();
 
-  return {
-    title: `게시글 | ${post.title}`,
-    description: post.body,
-  };
-}
+  // await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
 
-export default async function PostPage({ params }: Props) {
-  const { id } = await params;
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`,
-  );
-  const post = await response.json();
-
-  return (
-    <div>
-      <h1 className="text-2xl font-bold">제목: {post.title}</h1>
-      <p className="text-gray-500">내용: {post.body}</p>
-    </div>
-  );
+  return <div>포스트 상세 페이지 {id} </div>;
 }

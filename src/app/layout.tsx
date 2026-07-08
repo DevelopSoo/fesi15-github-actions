@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 
 import "./globals.css";
-import Header from "@/components/Header";
+import QueryProvider from "@/providers/QueryProvider";
 
 export default function RootLayout({
   children,
@@ -11,8 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );
