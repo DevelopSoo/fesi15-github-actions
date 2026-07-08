@@ -18,7 +18,7 @@ jobs:
           node-version: "24"
 
       - name: 의존성 라이브러리 설치하기
-        run: npm install
+        run: npm ci
 
       - name: 테스트 실행하기
         run: npm run test
