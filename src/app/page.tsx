@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>게시글 목록</h1>;
+  return <h1>게시글 목록2</h1>;
 }
