@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>스피드 인사이트</h1>;
+  return <h1>배포</h1>;
 }
