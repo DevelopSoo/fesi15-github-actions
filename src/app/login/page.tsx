@@ -1,13 +1,13 @@
 // src/app/login/page.tsx
 
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,10 +23,10 @@ export default function LoginPage() {
 
     try {
       // src/app/api/login/route.ts 파일로 요청합니다
-      const response = await fetch("/api/login", {
-        method: "POST",
+      const response = await fetch('/api/login', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
@@ -34,16 +34,16 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        alert(data.message || "로그인 실패");
+        alert(data.message || '로그인 실패');
         return;
       }
 
       alert(data.message);
       // 서버 컴포넌트를 새로고침한 후 페이지 이동
-      window.location.href = "/mypage";
+      window.location.href = '/mypage';
     } catch (error) {
-      console.error("로그인 오류:", error);
-      alert("로그인 중 오류가 발생했습니다.");
+      console.error('로그인 오류:', error);
+      alert('로그인 중 오류가 발생했습니다.');
     }
   };
 
