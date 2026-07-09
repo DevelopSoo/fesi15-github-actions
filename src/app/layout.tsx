@@ -1,7 +1,8 @@
 // src/app/layout.tsx
 
-import "./globals.css";
-import { MSWProvider } from "@/providers/MSWProvider";
+import './globals.css';
+import { MSWProvider } from '@/providers/MSWProvider';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function RootLayout({
   children,
@@ -11,7 +12,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MSWProvider>{children}</MSWProvider>
+        {children}
+        <SpeedInsights />
       </body>
     </html>
   );
